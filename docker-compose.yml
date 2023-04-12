@@ -1,0 +1,20 @@
+version: '3.7'
+services:
+  web:
+    container_name: ipglobal_cgm
+    restart: always
+    tty: true
+    image: ipglobal_cgm
+    build:
+      context: .
+      dockerfile: .docker/php/Dockerfile
+    ports:
+      - 8888:80
+    volumes:
+      - ./:/var/www/html/
+      - ./.docker/apache/000-default.conf:/etc/apache2/sites-available/000-default.conf
+    networks:
+      - ipglobal_cgm_network
+
+networks:
+  ipglobal_cgm_network:

@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Posts{% endblock %}
+{% block stylesheets %}
+    <link href="{{ asset('css/homepage.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+
+
+
+      <div class="album py-5 bg-light">
+        <div class="container">
+
+          <div class="row">
+            {% for post in posts %}
+            <div id="post-{{ post.id }}" class="col-md-4 post-element">
+                <div class="card mb-4 box-shadow">
+                    <a href="{{ path('posts_show', {id: post.id }) }}">
+                    <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text={{ post.title|slice(0, 10) }}..." alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text">{{ post.body|slice(0, 100) }}...</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+{% endblock %}

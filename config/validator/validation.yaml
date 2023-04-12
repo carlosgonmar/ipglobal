@@ -1,0 +1,15 @@
+# config/validator/validation.yaml
+App\Entity\Post:
+    properties:
+        title:
+            - NotBlank: ~
+            - Type: string
+            - Length: { min: 3, max: 255 }
+        body:
+            - NotBlank: ~
+            - Type: string
+            - Length: { min: 50 }
+        userId:
+            - NotBlank: ~
+            - Type: integer
+            - GreaterThan: { value: 0 }
