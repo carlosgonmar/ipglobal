@@ -1,13 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Posts{% endblock %}
-{% block stylesheets %}
-    <link href="{{ asset('css/404.css') }}" rel="stylesheet">
-{% endblock %}
+{% block title %}Error{% endblock %}
+{% block stylesheets %}{% endblock %}
 
 {% block body %}
 
-  <div id="main">
+  <div id="error">
     <div class="fof">
       <h1>Error {{ code }}</h1>
       <p><a href="{{ path("posts_index") }}">go home</a></p>

@@ -10,7 +10,7 @@
         <meta name="author" content="">
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         <!-- Bootstrap core CSS -->
-        <link href="{{ asset("css/bootstrap/bootstrap.min.css") }}" rel="stylesheet">
+        <link href="{{ asset("build/app.css") }}" rel="stylesheet">
 
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
@@ -70,15 +70,7 @@
             </div>
         </footer>
 
-        <!-- Bootstrap core JavaScript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script>window.jQuery || document.write('<script src="{{ asset("js/jquery-slim.min.js") }}"><\/script>')</script>
-        <script src="{{ asset("js/popper.min.js") }}"></script>
-        <script src="{{ asset("js/bootstrap.min.js") }}"></script>
-        <script src="{{ asset("js/holder.min.js") }}"></script>
-
+        <link href="{{ asset("build/app.js") }}" rel="stylesheet">
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
