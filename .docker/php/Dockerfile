@@ -2,6 +2,7 @@ FROM php:8.0-apache
 
 RUN a2enmod rewrite
 # Arguments defined in docker-compose.yml
+COPY ./ /var/www/html
 ARG user=user1
 ARG uid=1000
 # Basic install
@@ -33,4 +34,6 @@ RUN ln -s /home/$user/node-v14.21.3-linux-arm64/lib/node_modules/npm/bin/npm-cli
 # Set working directory
 USER $user
 WORKDIR /var/www/html
-#RUN composer install
+RUN composer install
+RUN npm install
+RUN npm run build

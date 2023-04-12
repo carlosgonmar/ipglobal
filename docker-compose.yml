@@ -11,7 +11,6 @@ services:
     ports:
       - 8888:80
     volumes:
-      - ./:/var/www/html/
       - ./.docker/apache/000-default.conf:/etc/apache2/sites-available/000-default.conf
     networks:
       - ipglobal_cgm_network
